@@ -1,4 +1,4 @@
-# V2ray RSS
+  V2ray RSS
 ---
 # 最近tg频道不更新了
 # 请大家使用[PPS](https://github.com/sqeven/pps)这个优秀的项目吧
@@ -81,4 +81,4 @@ http://localhost:3000/?w=1&n=1
 其他参数请看说明文件
 订阅成功后关闭窗口即可
 
-##### 注：如使用其他端口，修改启动文件start.sh -p参数后面的端口号
+##### 注：如使用其他端口，修改启动文件start.sh -p参数后面的端口号 
