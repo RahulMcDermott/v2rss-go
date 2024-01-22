@@ -1,84 +1,62 @@
-  V2ray RSS
----
-# 最近tg频道不更新了
-# 请大家使用[PPS](https://github.com/sqeven/pps)这个优秀的项目吧
-# 或者直接用[这个](https://github.com/freefq/free)订阅，国内可以使用[cf worker](https://github.com/netnr/workers)反代获取数据
-# V2ray客户端推荐：[Qv2ray](https://github.com/Qv2ray/Qv2ray)
----
-### 说明
-通过爬取免费v2ray链接分享，自动生成订阅链接
+# Modern PHP
 
-### 更新日志
-##### 2020/10/18
-- 添加Docker部署方式
-- 修复空数据
-##### 2020/10/16
-- 修复str转byte含有空数据导致的base64编码失败
-##### 2020/10/13
-- 修复base64编码bug导致的数据返回异常
-- 原CORS项目地址：[cors.zme.ink](https://github.com/netnr/workers)，请多多给些star鼓励作者。
-- 使用新的CORS，CloudFlare Works部署，用于前端跨域， 项目地址：[cors-anywhere-cfworker](https://github.com/sunyuting83/cors-anywhere-cfworker)。希望同学们建立自己的cf worker并重新打包，分散压力。
-##### 2020/10/8
-- 添加Linux一键部署、卸载脚本（Nginx自行配置）
+This is the companion code repository for [Modern PHP](http://shop.oreilly.com/product/0636920033868.do) by Josh Lockhart (O’Reilly).
 
-### Docker部署
-#### 拉镜像
-```
-sudo docker pull v2rss/v2rss
-```
-#### 起容器
-```
-sudo docker run --name v2rss --net=host -d v2rss/v2rss
-```
-> Docker部署默认监听端口5500
+## About the Book
 
-### Linux一键安装脚本
-```
-curl https://raw.githubusercontent.com/sunyuting83/v2rss-go/master/install.sh |bash
-```
-> 一键脚本监听端口5500
-### Linux一键卸载脚本
-```
-curl https://raw.githubusercontent.com/sunyuting83/v2rss-go/master/uninstall.sh |bash
-```
+The PHP language is different than you remember. No longer just about procedural code and monolithic frameworks, PHP has experienced a renaissance to become a full-featured, mature language with object-orientation, namespaces, and a growing collection of reusable component libraries.
 
-### 启动参数说明
--p 监听端口号
+Modern PHP reveals these new language features in action. Author Josh Lockhart—creator of [PHP The Right Way](http://www.phptherightway.com/), a popular community initiative—shows you how to develop PHP applications using best practices for application architecture and planning, databases, security, testing, debugging, and deployment.
 
-#### 参数说明
-浏览器访问 http://localhost:5500/?i=1&w=0&n=1
+* Learn detailed, practical techniques that you can immediately implement in your PHP project
+* Grow your PHP skillset with the newest language features and modern best practices
+* Get up to speed on new language features of PHP 5.x (OOP, DateTime, namespaces, traits, and more)
+* Discover the latest from the PHP community, including what's new with the Hack programming language and the HipHop Virtual Machine (HHVM)
+* Find out how the new PHP has become a more mature language with community standards, a growing affinity for interoperable components, and a passionate community committed to improving performance.
 
-| 参数  | 说明 | 默认值 |
-| ------------ | ------------ | ------------ |
-| w | 启用代理访问（国内跨域访问） | 0(不开启) |
-| n | 内容数字 | 1 |
-| i | 合并数据数量 | 0(不合并) |
+<dl>
+    <dt>Title</dt>
+    <dd>Modern PHP
+    <dt>By</dt>
+    <dd>Josh Lockhart</dd>
+    <dt>Publisher</dt>
+    <dd>O'Reilly Media</dd>
+    <dt>Formats</dt>
+    <dd>Print, Safari Books Online</dd>
+    <dt>Print</dt>
+    <dd>February 2015 (est.)</dd>
+    <dt>Pages</dt>
+    <dd>258 (est.)</dd>
+    <dt>Print ISBN</dt>
+    <dd>978-1-4919-0501-2 | ISBN 10:1-4919-0501-8</dd>
+</dl>
 
-### nginx配置文件
-```
-server {
-    listen 80;
-    server_name yourdomain.com;
-    location / {
-        proxy_pass http://127.0.0.1:5500;
-        proxy_set_header Host $host;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    }
-    access_log  your log path;
-}
-```
-修改yourdomain.com成你的域名
+## About this Repository
 
-修改your log path 成你的log文件路径
+Each chapter has its own repository directory, and directory contents are organized according to the chapter's content. I've tried to name each code file according to its related Figure ID in the book.
 
-使用其他端口 请修改 proxy_pass 后面的端口号
+## About the Author
 
-- Win版使用说明
-> 下载v2rss_x86_64.zip 并解压。双击运行。
-在v2ray客户端订阅处填入订阅地址：
-http://localhost:3000/?w=1&n=1
-必须加w参数，用于国内访问。
-其他参数请看说明文件
-订阅成功后关闭窗口即可
+Josh Lockhart created the [Slim Framework](http://slimframework.com/), a popular PHP micro framework that enables rapid web application and API development. Josh also started and currently curates [PHP The Right Way](http://www.phptherightway.com/), a popular initiative in the PHP community that encourages good practices and disseminates quality information for PHP developers around the world.
 
-##### 注：如使用其他端口，修改启动文件start.sh -p参数后面的端口号 
+Josh is a developer at [New Media Campaigns](http://www.newmediacampaigns.com/)—a full service web design, development, and marketing agency in Carrboro, North Carolina—where he enjoys building custom applications with HTML, CSS, PHP, JavaScript, Bash, and various content management frameworks.
+
+Josh graduated from the [Information and Library Science](http://sils.unc.edu/) program at the University of North Carolina at Chapel Hill in 2008. He currently resides in Chapel Hill, North Carolina with his wonderful wife, Laurel, and their two dogs.
+
+You can follow Josh on [Twitter](https://twitter.com/codeguy), read his [blog](https://joshlockhart.com), and track his open source projects on [GitHub](https://github.com/codeguy).
+
+## Code License and Permission
+
+This book is here to help you get your job done. In general, if example code is offered with this book, you may use it in your programs and documentation. You do not need to contact us for permission unless you’re reproducing a significant portion of the code. For example, writing a program that uses several chunks of code from this book does not require permission. Selling or distributing a CD-ROM of examples from O’Reilly books does require permission. Answering a question by citing this book and quoting example code does not require permission. Incorporating a significant amount of example code from this book into your product’s documentation does require permission.
+We appreciate, but do not require, attribution. An attribution usually includes the title, author, publisher, and ISBN. For example: “Modern PHP by Josh Lockhart (O’Reilly). Copyright 2015 Josh Lockhart, 978-1-491-90501-2.”
+If you feel your use of code examples falls outside fair use or the permission given above, feel free to contact us at permissions@oreilly.com.
+
+## Safari® Books Online
+
+Safari Books Online is an on-demand digital library that delivers expert content in both book and video form from the world’s leading authors in technology and business.
+
+Technology professionals, software developers, web designers, and business and crea‐ tive professionals use Safari Books Online as their primary resource for research, problem solving, learning, and certification training.
+
+Safari Books Online offers a range of plans and pricing for enterprise, government, education, and individuals.
+
+Members have access to thousands of books, training videos, and prepublication manuscripts in one fully searchable database from publishers like O’Reilly Media, Prentice Hall Professional, Addison-Wesley Professional, Microsoft Press, Sams, Que, Peachpit Press, Focal Press, Cisco Press, John Wiley & Sons, Syngress, Morgan Kauf‐ mann, IBM Redbooks, Packt, Adobe Press, FT Press, Apress, Manning, New Riders, McGraw-Hill, Jones & Bartlett, Course Technology, and hundreds more. For more information about Safari Books Online, please visit us online.
